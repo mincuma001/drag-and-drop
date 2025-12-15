@@ -53,15 +53,20 @@ h1 {
     overflow-y: auto;
     padding-right: 6px;
 }
+.cards :hover {
+    background-color: #555;
+    color: #fff;
+}
 .list h2 {
     color: #555;
     margin-bottom: 15px;
     font-size: 1.5rem;
 }
+/*
 .list.over {
-    background-color: #d0d3d8; /* schimba culoarea listei la drag*/
+    background-color: #555;  schimba culoarea listei la drag
 }
-
+*/
 
 .card {
     background-color: #fff;
@@ -172,7 +177,7 @@ label[for="taskInput"] {
     color: #333;
 }
 .actions button.close:hover {
-    background-color: red;
+    background-color: #c7c7c7;
 }
 
 .card .delete-btn {
