@@ -58,7 +58,7 @@ h1 {
     margin-bottom: 15px;
     font-size: 1.5rem;
 }
-.list.over {
+.list. over {
     background-color: #d0d3d8; /* schimba culoarea listei la drag*/
 }
 
@@ -180,10 +180,13 @@ label[for="taskInput"] {
     background: red;
     color: #fff;
     border: none;
-    border-radius: 14px;
+    border-radius: 50%;
     font-size: 15px;
     padding: 2px 6px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
+    margin-right: 5px;
     transition: background 0.2s ease;
 }
 .card .delete-btn:hover {
@@ -191,14 +194,16 @@ label[for="taskInput"] {
 }
 .card .edit-btn {
     float: right;
-    background: #3498db;
+    background:#007bff;
     color: #fff;
     border: none;
-    border-radius: 4px;
-    font-size: 12px;
+    border-radius: 50%;
+    font-size: 15px;
     padding: 2px 6px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
-    margin-left: 5px;
+    margin-right: 5px;
     transition: background 0.2s ease;
 }
 
