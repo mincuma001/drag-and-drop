@@ -41,6 +41,7 @@ h1 {
     border-radius: 8px;
     width: 30%;
     min-height: 400px;
+    max-height: 450px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 .list h2 {
