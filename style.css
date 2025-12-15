@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+    background-color: #f7f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container {
+    text-align: center;
+    width: 100%;
+    padding: 1.2rem;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* board si liste */
+.board {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.list {
+    background-color: #e3e4e8;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 30%;
+    min-height: 400px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    height: 500px; 
+}
+
+
+.cards {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+.list h2 {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+.list.over {
+    background-color: #d0d3d8; /* schimba culoarea listei la drag*/
+}
+
+
+.card {
+    background-color: #fff;
+    color: #333;
+    padding: 1rem;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: grab;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+.card:active {
+    cursor: grabbing;
+    transform: scale(1.05);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* buton "+Adaugare..." */
+.show {
+    padding: 10px 14px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.15s ease;
+    margin: 15px auto 20px;
+    display: block;
+}
+.show::before {
+    content: "+ ";
+    font-size: 18px;
+    font-weight: bold;
+}
+.show:hover {
+    background: #004ea5;
+}
+
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    max-width: 90%;
+    padding: 20px 24px;
+    border: none;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    font-family: sans-serif;
+}
+
+/* backdrop blurare dialog */
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+/* label si input */
+label[for="taskInput"] {
+    display: block;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+#taskInput {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    outline: none;
+}
+#taskInput:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+/* container butoane dialog */
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.actions button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+.actions button#addTaskBtn {
+    background-color: #007bff;
+    color: #fff;
+}
+.actions button#addTaskBtn:hover {
+    background-color: #005fcc;
+    transform: translateY(-1px);
+}
+.actions button.close {
+    background-color: #e0e0e0;
+    color: #333;
+}
+.actions button.close:hover {
+    background-color: #c7c7c7;
+}
+
+.card .delete-btn {
+    float: right;
+    background: red;
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.card .delete-btn:hover {
+    background: #c0392b;
+}
+.card .edit-btn {
+    float: right;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 2px 6px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background 0.2s ease;
+}
+
+.card .edit-btn:hover {
+    background: #217dbb;
+}
+
+
+/* media pt mobile */
+@media (max-width: 768px) {
+    .board {
+        flex-direction: column;
+        align-items: center;
+    }
+    .list {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>TO-DO List</h1>
+
+        <!-- buton pentru adaugare task -->
+        <div class="buton-task">
+            <dialog id="dialog">
+                <label for="taskInput" id="dialogLabel">Adaugare task</label>
+                <input type="text" id="taskInput" placeholder="Adauga aici task.." />
+                <div class="actions">
+                    <button id="addTaskBtn">Adauga</button>
+                    <button class="close">Inchide</button>
+                </div>
+            </dialog>
+            <button class="show">Adaugare...</button>
+        </div>
+
+        <div class="board"> 
+            <div class="list" id="lis1"> 
+                <h2>📋De facut</h2> 
+                <div class="cards"></div> 
+            </div> 
+
+            <div class="list" id="lis2"> 
+                <h2>⏳In lucru</h2> 
+                <div class="cards"></div> 
+
+            </div> <div class="list" id="lis3"> 
+                <h2>⚠️Alte probleme</h2> 
+                <div class="cards"></div> 
+            </div>
+             
+            <div class="list" id="lis4"> 
+                <h2>✅Rezolvate</h2> 
+                <div class="cards"></div>
+            </div> 
+        </div> 
+    </div>
+        
+    <script src="script.js"></script>    
+</body>
+</html>
