@@ -172,7 +172,7 @@ label[for="taskInput"] {
     color: #333;
 }
 .actions button.close:hover {
-    background-color: #c7c7c7;
+    background-color: red;
 }
 
 .card .delete-btn {
