@@ -112,7 +112,6 @@ addTaskBtn.addEventListener("click", () => {
         const newCard = document.createElement("div");
         newCard.classList.add("card");
         newCard.setAttribute("draggable", "true");
-        newCard.addEventListener("dragover", e => e.preventDefault());
 
         const cardText = document.createElement("span");
         cardText.classList.add("card-text");
@@ -129,6 +128,7 @@ addTaskBtn.addEventListener("click", () => {
 
         newCard.addEventListener("dragstart", dragStart);
         newCard.addEventListener("dragend", dragEnd);
+        newCard.addEventListener("dragover", e => e.preventDefault());
         
     }
 
