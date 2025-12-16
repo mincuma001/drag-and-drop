@@ -6,7 +6,7 @@ const addTaskBtn = document.getElementById("addTaskBtn");
 const taskInput = document.getElementById("taskInput");
 
 const list1 = document.getElementById("lis1"); // lista "De facut"
-const lists = document.querySelectorAll(".cards"); // totate listele
+const lists = document.querySelectorAll(".list"); // totate listele
 
 const dialogLabel = document.getElementById("dialogLabel")
 let editingCard = null;
@@ -68,7 +68,9 @@ function dragDrop(e) {
     const id = e.dataTransfer.getData("text/plain");
     const card = document.getElementById(id);
 
-    this.appendChild(card); 
+    const cardsContainer = this.querySelector(".cards"); // containerul cardurilor
+    cardsContainer.appendChild(card); 
+
     this.classList.remove("over");
     saveToLocalStorage();
 }
