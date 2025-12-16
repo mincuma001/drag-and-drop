@@ -6,10 +6,10 @@ const addTaskBtn = document.getElementById("addTaskBtn");
 const taskInput = document.getElementById("taskInput");
 
 const list1 = document.getElementById("lis1"); // lista "De facut"
-const lists = document.querySelectorAll(".list"); // totate listele
+const lists = document.querySelectorAll(".cards"); // totate listele
 
 const dialogLabel = document.getElementById("dialogLabel")
-//let editingCard = null;
+let editingCard = null;
 let cardNumber = 4; // incepe de la 4 pentru task-urile noi
 
 
@@ -48,8 +48,10 @@ function addEditButton(card) {
 
 // functii Drag & Drop
 function dragStart(e) {
+    e.dataTransfer.effectAllowed = "move"; 
     e.dataTransfer.setData("text/plain", this.id);
 }
+
 function dragEnd() {}
 function dragOver(e) {
     e.preventDefault();
@@ -62,9 +64,11 @@ function dragLeave(e) {
     this.classList.remove("over");
 }
 function dragDrop(e) {
+    e.preventDefault();
     const id = e.dataTransfer.getData("text/plain");
     const card = document.getElementById(id);
-    this.querySelector(".cards").appendChild(card);
+
+    this.appendChild(card); 
     this.classList.remove("over");
     saveToLocalStorage();
 }
@@ -108,6 +112,7 @@ addTaskBtn.addEventListener("click", () => {
         const newCard = document.createElement("div");
         newCard.classList.add("card");
         newCard.setAttribute("draggable", "true");
+        newCard.addEventListener("dragover", e => e.preventDefault());
 
         const cardText = document.createElement("span");
         cardText.classList.add("card-text");
@@ -124,6 +129,7 @@ addTaskBtn.addEventListener("click", () => {
 
         newCard.addEventListener("dragstart", dragStart);
         newCard.addEventListener("dragend", dragEnd);
+        
     }
 
     taskInput.value = "";
@@ -168,6 +174,7 @@ function loadFromLocalStorage() {
 
         card.addEventListener("dragstart", dragStart);
         card.addEventListener("dragend", dragEnd);
+        card.addEventListener("dragover", e => e.preventDefault());
 
         document
         .getElementById(item.listId)
