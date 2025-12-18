@@ -10,7 +10,7 @@ const lists = document.querySelectorAll(".list"); // totate listele
 
 const dialogLabel = document.getElementById("dialogLabel")
 let editingCard = null;
-let cardNumber = 4; // incepe de la 4 pentru task-urile noi
+//let cardNumber = 4; // incepe de la 4 pentru task-urile noi
 
 
 // functie pentru adaugarea butonului de stergere pe carduri
@@ -120,8 +120,8 @@ addTaskBtn.addEventListener("click", () => {
         cardText.textContent = text;
         newCard.appendChild(cardText);
 
-        newCard.id = "card" + cardNumber;
-        cardNumber++;
+        newCard.id = "card-" + Date.now();
+        //cardNumber++;
 
         list1.querySelector(".cards").appendChild(newCard);
 
